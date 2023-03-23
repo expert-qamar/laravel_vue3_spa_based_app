@@ -10,7 +10,7 @@
                 <div class="sm:flex mx-auto justify-between items-center text-white px-3">
                     <div class="sm:flex items-center text-center">
                         <div class="ml-2 whitespace-nowrap sm:ml-0 lg:text-[32px] sm:text-[24px] text-[17px] uppercase font-[600] !inline-block" role="button">
-                            <router-link to="/login">Essence-d</router-link>
+                            <router-link to="/login">Laravel & Vue 3 Crud app </router-link>
                         </div>
                     </div>
                     <!--logout icon show with the help of pinia store-->

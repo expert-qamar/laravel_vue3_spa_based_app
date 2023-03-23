@@ -9,6 +9,7 @@ export default function commonCode(){
         headerTitle = ref(''),
         showModal = ref(false),
         isLoading = ref(false),
+        option = ref(5),
         router = useRouter(),
         validationErrors = ref({}),
         Toast =  Swal.mixin({
@@ -39,6 +40,6 @@ export default function commonCode(){
     }
 
     return {
-        router, Swal, deleteAlert, Toast, validationErrors, updateCase, headerTitle, showModal, isLoading
+        router, Swal, deleteAlert, Toast, validationErrors, updateCase, headerTitle, showModal, isLoading, option
     }
 }

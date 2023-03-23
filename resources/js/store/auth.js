@@ -11,21 +11,21 @@ const logInSession = ( !Cookies.get('loggedIn')),
 export const useAuth = defineStore('auth', {
     state: () => {
         return {
-            user: null,
-            logoutStatus: logInSession,
+            user: null, // user instance object here
+            logoutStatus: logInSession, // logout icon show on header
             token: Cookies.get('token') || '',
-            validationErrors: {},
-            registerForm: registerObjectForm,
+            registerForm: registerObjectForm, //user register form
         }
     },
 
+    //this getter check weather user login or not
     getters: {
         check: state => state.user !== null,
     },
     actions: {
         async logout(){
             const router = useRouter()
-            let cookiesRemoverArray = ['loggedIn', 'LoggedRoleId', 'token']
+            let cookiesRemoverArray = ['loggedIn', 'token']
             await axios.post('/logout')
                 .then((response)=>{
                     this.user = null
@@ -38,6 +38,9 @@ export const useAuth = defineStore('auth', {
                 })
 
         },
+
+        /* this function call when user is login but page refresh then user instance recall */
+
         async getAuthUser(){
             const router = useRouter()
             await axios.get('/api/user')
@@ -54,6 +57,7 @@ export const useAuth = defineStore('auth', {
                 })
 
         },
+        /* Token check verify for user request. if token exist then user is login on page refresh*/
         setToken(value){
             if(!!value)
             {
