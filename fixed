@@ -1,0 +1,173 @@
+[33mcad07d8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m encrypt data changes
+[33m0baad08[m super admin dashboard issue fixed
+[33m1484562[m translation
+[33m5eca21b[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33ma247e01[m  errors issues or audit or encrypt data etc
+[33mae0ec3b[m translation_fixes
+[33md717b16[m trasnlaion_changes
+[33mdbcc6e3[m lang_changes
+[33m1f2076e[m 24 document fixed
+[33m05c0d5b[m trasnlation_fixes
+[33m3c40263[m super-user account setting bug fixed
+[33m64b7ef6[m account setting 2nd push
+[33mc6e5b87[m Super user Account Setting module
+[33m30bc942[m translation_changes_swedish
+[33m89f29cb[m multi request call on lang changes
+[33madd303e[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33maa72a07[m changes in emitt function
+[33ma4bf235[m fix_translation_tag
+[33mfe773e4[m fix_translation_tag
+[33m397022c[m trasnaltion
+[33mf3d1eab[m notes issue fixed
+[33mfd225d0[m cookieconsent multi lang
+[33m26f18f8[m language multi request problem
+[33mcf7f09f[m multi request on langauge change issue
+[33md208552[m changes in personalInformantinfo Blade file
+[33m0bff75c[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m325f8ea[m translation add in blade
+[33m038ffac[m swe-eng translation, spreadsheet fixes
+[33m350a0a5[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m8124947[m informant page info options multiSelect
+[33m38d6c2b[m translation_swe_eng
+[33m198c2af[m fixes_tranlation, review
+[33m0a80547[m translate missing etc
+[33m031334f[m translate docs verify
+[33m74b71d9[m minor changes in lag
+[33m7962b65[m swedish lang set
+[33m85b82cd[m translation module add from scratch with new key in all compoments
+[33m65ece5e[m thoratle error translate
+[33mf3110ba[m login failur error show
+[33m19633ee[m adhd service fixed or some minor issue fixed
+[33mce14624[m minors issue fixed
+[33mdd37a24[m minor changes
+[33mcba0a5c[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m926b39d[m warning translate add
+[33m3d9d788[m flare.io - error-tracking tool
+[33me340e5b[m changes according documents
+[33m4802eb0[m changes in CIndicatorMenu or age abberivated
+[33m1ebf8c2[m minore logic changes in ADHD
+[33m6c32f0d[m minor changes
+[33m5300dfd[m Qscore or QscoreClinician table Seprate etc
+[33mf79971c[m access resticed fish on name
+[33m59dddf0[m issue fixed or access resticted etc
+[33me528f51[m minor bugs fixed
+[33mf3768d8[m remove classes
+[33mb4ae021[m cookies policy or some minor issues fixed
+[33m14919af[m privacy poloicy page add
+[33me7e0740[m bugs fixed and design cookie page
+[33me1af0b4[m autism algo changing
+[33mce03c76[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33mea04b6f[m minor trnaslate
+[33m6dd26d6[m fix_tag_html
+[33m858145b[m chnages in translate
+[33m95a80ad[m minors bug fixed
+[33m0892048[m changes with document
+[33m8cccef7[m  changes in migration or back button
+[33me654257[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33mffe409a[m email documents fixed
+[33mbd7175e[m code_review, months-validation
+[33m759f99f[m date compare issue fixed or remove some extra code
+[33ma3907f5[m previous text answer shown
+[33m934d4d2[m changes in age validation
+[33m67faa2b[m minor changes in language or informant age pop up
+[33m2e77e9d[m minor changes in clinician side
+[33m4ad17db[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m682d190[m changes
+[33mf39fedb[m changes in service
+[33m139e91a[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33md53bd95[m column name change in controller
+[33m0cc8558[m clinician new logic db structure set
+[33m9157698[m optimize some code
+[33me6cab40[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m395aaca[m changes in new logical
+[33med52df4[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m3f3ca75[m some bugs fixed
+[33m8acb0ab[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33mf235998[m  missing code push
+[33m40ad56c[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m304982f[m clinician side new logical implements
+[33m0a1b905[m minors bugs fixed
+[33mad1e263[m bugs fixed
+[33m0acfe01[m changes layouts
+[33m7d35f66[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33ma32a7a8[m changes in layouts
+[33m163ae39[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33me324042[m documents fixed
+[33m78fc788[m  document fixed last ticket 70
+[33m0dba559[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33md09b0d8[m composer_lock
+[33m13c0408[m google document fixed
+[33m2c6cff1[m document issue fixeds
+[33mc526e85[m document fixed
+[33m358fc35[m documents fixed
+[33mad9066d[m google document fixed
+[33mb67fa71[m bugs fixed
+[33m7d76c10[m essence-d document fixed and code review in question-section compoment file
+[33me3ffa01[m code review from scratch
+[33mccc644e[m  drive document fixed and code removed
+[33m8fb559a[m code-review-informant
+[33mc1e9a8a[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m757ffef[m document issues fixed
+[33m2f58a1d[m return_array
+[33m0b90bfd[m remove uniuqe key from suer_info_table
+[33mdc4ddde[m drive doucument issue fixed
+[33m4d46db0[m informant category-controller short code
+[33m7c5bacd[m add migratio for unique user id
+[33m8f90391[m changes in upsert
+[33m16ab5c2[m skype issue fixed
+[33mfabbaaf[m issues fixed
+[33m64087da[m fillable props missed
+[33m379e638[m  tickets resolved
+[33m3bcdeac[m url tempare issue fixed
+[33mfe4317a[m  fixed some layout issues
+[33m9d6f55c[m inform dashboard issue fixed
+[33m9b08619[m changes in translate dasboard
+[33ma1cbc9d[m informant category code short
+[33mba0de8c[m  code opitimze in clinician CategoryController or documents
+[33m609ed05[m code optimiz
+[33m6a4b67d[m query optimiz test
+[33m5993d86[m dyanmic language categories or questiones changes
+[33m4eea54b[m informant age info page text break
+[33m50ef710[m same changes like temp end comit 562&519 ticket
+[33m2993b47[m tickets resolved
+[33me31f7db[m same with essence_d_v4_temp
+[33mcb810c1[m informant category code optimize
+[33m92cb44a[m ticets resolved
+[33m331ea74[m tickets fixed or sentce issues fixed etc
+[33m81395a1[m first document code review done
+[33mef8b2f4[m code overview
+[33m965325d[m tickets or some issue fixed
+[33m30deb3f[m tickets fixed or design issue fixed
+[33m920e830[m  bugs fixed after meeting or before meeting 11/3/22
+[33m6bd2978[m document issues fixed
+[33m92b952e[m main menu icon on header
+[33m0879201[m changes with new documents or tickets resolved
+[33mb5a1810[m changes in tepmlate
+[33m60e178f[m lang fixed
+[33m61c7d7b[m bugs fixed
+[33m80e5030[m fixed error in adminis side
+[33mce6c977[m Merge branch 'master' of https://github.com/KpFraser/essence-d_v4
+[33m166e359[m changes in  language
+[33ma210fd6[m UI fixing
+[33mb86ac48[m UI fixing
+[33m41116e4[m new design responsive checked
+[33m1a726c9[m new design changes
+[33m8c7fb02[m new document theme implement
+[33md06b0a2[m code review and code optimize
+[33mae48888[m changes date format with moment
+[33m359096b[m  new design fixed issue
+[33mb3b2b0c[m table fix
+[33meaf4e7b[m changes in controller or informant
+[33m2b7bb9d[m question-section or informant category controller issue solved
+[33mc0c1c28[m question show dyanmically in table structre
+[33m4807bf9[m table desgin
+[33ma595651[m new theme color changing
+[33m66672a3[m Gillberg Center 221007
+[33m7183bb2[m ticets resolved
+[33m295ba4b[m middleware pipeline issue solved or tickets resolved
+[33m42b880f[m final code clean
+[33mde619ca[m responsiveness
+[33m914a75b[m responsive sites
+[33mcca470e[m swedish lang change
+[33m1e24c63[m conflict resolved
+[33m595bbc9[m tickets resolved or route redirectio
