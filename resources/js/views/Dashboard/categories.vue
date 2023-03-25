@@ -194,7 +194,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                             <!-- show model in which category create  form show-->
                             <el-button  classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Add Categories" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Add Categories'; form = {}; showModal = !showModal; " />
                             <!-- search input from table watchEvent trigger when any word is search-->
-                            <global-search-input :classes="'rounded-full sm:w-2/5 lg:w-1/5 w-2/5'" @watchEvent="watchFunc" globalType="categories" />
+                            <global-search-input :classes="'rounded-full sm:w-3/5 w-2/5'" @watchEvent="watchFunc" globalType="categories" />
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                     <div class="md:text-[16px] overflow-x-auto sm:text-[12px] text-[10px] h-[500px] text-[#212529] pb-8">
                         <table id="show_all_translate" class="min-w-full border">
                             <!-- Table header component for common functionality in every table, just pass the object of all columns with key must be column_name -->
-                            <el-t-header module="categories" @emitCategories="sortOrder" v-bind:search_items="{id: '#', category:'Category', action : 'action' }" />
+                            <el-t-header module="categories" @emitCategories="sortOrder" v-bind:search_items="{id: '#', name:'Category', action : 'action' }" />
                             <tbody class="bg-white divide-y divide-gray-200 divide-solid ">
                             <tr v-if="countData() > 0"  class="!border-b-2 border-hex-e1e1"  v-for="(category, key) in categoriesData.data">
                                 <td :class="tb_body_td">{{(categoriesData.meta.from)+key}}</td>

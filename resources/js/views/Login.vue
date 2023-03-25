@@ -1,11 +1,12 @@
 <script setup>
     import Cookies from 'js-cookie'
-    import userAuth from "../composables/auth";
-    import {reactive, onMounted, inject} from "vue";
+    import {reactive, onMounted} from "vue";
+    import commonCode from "../composables/common";
 
     /* we create a 'auth.js' composable file for some common functionality perform into our login or register components*/
-    const { validateFields, validationErrors, auth, router, isLoading } = userAuth(),
-        emitter = inject('emitter'),
+    const
+        { auth, router, validationErrors, isLoading} = commonCode(),
+
         loginForm = reactive({
             email: '',
             password: '',
@@ -34,6 +35,24 @@
             }).finally(() => {
                 isLoading.value = false
             })
+    },
+    validateFields = (loginForm) => {
+        let emailError,
+            passwordError,
+            response = true
+        if(!loginForm.email){
+            emailError = ['The email field is required.'];
+            validationErrors.value.email = emailError;
+            response = false;
+        }
+        if(!loginForm.password)
+        {
+            passwordError = ['The password field is required.'];
+            validationErrors.value.password = passwordError;
+            response = false;
+        }
+        return response;
+
     }
 
     onMounted(()=>{

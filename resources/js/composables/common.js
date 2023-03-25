@@ -1,10 +1,12 @@
 import {ref, inject} from 'vue'
 import { useRouter } from 'vue-router'
+import {useAuth} from "../store/auth"
 
 /*In this file we create some common props and import sweet alert and vue router etc, for multiple components*/
 export default function commonCode(){
     const
         Swal = inject('$swal'),
+        auth = useAuth(),
         updateCase = ref(false),
         headerTitle = ref(''),
         showModal = ref(false),
@@ -40,6 +42,6 @@ export default function commonCode(){
     }
 
     return {
-        router, Swal, deleteAlert, Toast, validationErrors, updateCase, headerTitle, showModal, isLoading, option
+        auth, router, Swal, deleteAlert, Toast, validationErrors, updateCase, headerTitle, showModal, isLoading, option
     }
 }

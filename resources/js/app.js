@@ -1,5 +1,5 @@
 
-import { createApp } from 'vue/dist/vue.esm-bundler';
+import { createApp } from 'vue'
 import './plugins/index' //import our custom plugins
 import LaravelVuePagination from 'laravel-vue-pagination'; //for data table functionality shows
 import VueSweetalert2 from "vue-sweetalert2"; //show toaster for alert
@@ -29,8 +29,8 @@ app
     .component('SaveButton', SaveButton)
     .component('ElIcon', svgIcon)
 
-app.use(pinia)
 app.use(router)
+app.use(pinia)
 app.use(VueSweetalert2);
 app.mount('#app')
 

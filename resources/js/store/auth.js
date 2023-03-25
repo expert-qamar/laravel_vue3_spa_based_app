@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import Cookies from 'js-cookie'
-import { useRouter } from 'vue-router'
 const logInSession = ( !Cookies.get('loggedIn')),
         registerObjectForm = {
             name: '',
@@ -23,8 +22,7 @@ export const useAuth = defineStore('auth', {
         check: state => state.user !== null,
     },
     actions: {
-        async logout(){
-            const router = useRouter()
+        async logout(router){
             let cookiesRemoverArray = ['loggedIn', 'token']
             await axios.post('/logout')
                 .then((response)=>{
@@ -34,15 +32,16 @@ export const useAuth = defineStore('auth', {
                     cookiesRemoverArray.forEach(function(currentValue,index){
                         Cookies.remove(currentValue)
                     })
-                    router.push({ name: 'login' })
+                    // Make sure that the router instance is available
+                        if (router)
+                            router.push('/login')
                 })
 
         },
 
         /* this function call when user is login but page refresh then user instance recall */
 
-        async getAuthUser(){
-            const router = useRouter()
+        async getAuthUser(router){
             await axios.get('/api/user')
                 .then( (response) => {
                     if(!!response.data.data){

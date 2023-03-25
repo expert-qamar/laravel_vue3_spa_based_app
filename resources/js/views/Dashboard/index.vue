@@ -38,10 +38,11 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
     /*show value in form from table*/
 
     async function editCarDetails(id){
-        if (isLoading.value) {
+
+      /*  if (isLoading.value) {
             showModal.value = false;
             return false
-        }
+        }*/
         await axios
             .get('/api/cars-detail/'+id)
             .then(response => {
@@ -88,12 +89,15 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
     /*store function start*/
 
     async function storeFormData(post) {
+        // Make sure that the button loading is false
         if (isLoading.value)
             return
 
         isLoading.value = true
+        // Make sure that validation errors object empty before validation function call agin
         validationErrors.value = {}
         let responseValidation = validateFields(post)
+        //if any error occur then function return false here not call request
         if (responseValidation === false) {
             isLoading.value = false
             return false
@@ -119,7 +123,9 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                 if(error.response?.data){
                     validationErrors.value = error.response.data.errors
                 }
-            }).finally( () => isLoading.value = false)
+            })
+            //when the request complete then button Loading hide
+            .finally( () => isLoading.value = false)
     }
 
     /*update function start*/
@@ -147,7 +153,9 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                 if(error.response?.data){
                     validationErrors.value = error.response.data.errors
                 }
-            }).finally( () => isLoading.value = false)
+            })
+            //when the request complete then button Loading hide
+            .finally( () => isLoading.value = false)
     }
 
     /*get all categories for show in select input options*/
@@ -234,9 +242,9 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                         </div>
                         <div class="flex justify-end">
                             <!-- show model in which car detail form show-->
-                            <el-button classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Register vehicle" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Register new Vehicle'; form = {}; showModal = !showModal; " />
+                            <el-button classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Register vehicle" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Register new Vehicle'; form = {}; showModal = !showModal;" />
                             <!-- search input from table watchEvent trigger when any word is search-->
-                            <global-search-input :classes="'rounded-full sm:w-2/5 lg:w-1/5 w-2/5'" @watchEvent="watchFunc" globalType="carDetails" />
+                            <global-search-input :classes="'rounded-full sm:w-3/5 w-2/5'" @watchEvent="watchFunc" globalType="carDetails" />
                         </div>
                     </div>
                 </div>

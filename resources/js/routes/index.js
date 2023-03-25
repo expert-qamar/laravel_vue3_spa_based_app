@@ -16,7 +16,7 @@ const routes = [
             {
                 path: '/register',
                 component: ()=> import('../views/RegisterUser.vue'),
-                name: 'HelpDesk',
+                name: 'register',
             },
 
             {
@@ -35,7 +35,7 @@ const routes = [
                 beforeEnter: async (to, from, next) => {
                    const auth = useAuth()
                     if (!auth.check  && !!auth.token)
-                        auth.getAuthUser()
+                        auth.getAuthUser(next)
                     else if( !auth.check  && !auth.token)
                         return next('/login')
 
@@ -52,7 +52,7 @@ const routes = [
                 beforeEnter: async (to, from, next) => {
                     const auth = useAuth()
                     if (!auth.check  && !!auth.token)
-                        auth.getAuthUser()
+                        auth.getAuthUser(next)
                     else if( !auth.check  && !auth.token)
                         return next('/login')
 
