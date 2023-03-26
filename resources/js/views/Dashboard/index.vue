@@ -1,17 +1,22 @@
 <script setup>
-import {onMounted, reactive, ref, watch} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import ElTHeader from '../../components/tHeader.vue';
 import SaveButton from "../../components/SaveButton.vue";
 import commonCode from "../../composables/common";
 import GlobalSearchInput from "../../components/globalSearchInput.vue";
 
 const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex-e1e1 px-6 py-2 text-center text-gray-900",
-    vehicleForm = { register_no: '', model:'', color:'', making_year:'', category:''},
+    vehicleForm = { id:'', register_no: '', model:'', color:'', making_year:'', category:''},
     { router, Toast, deleteAlert, validationErrors, updateCase, headerTitle, showModal, isLoading, option} = commonCode(),
     carsDetail = ref({}),
     carsDataDetail = ref({}),
-    form = reactive(vehicleForm),
-    items = ref({})
+    //vehicleForm Object add in reactive with spread operator
+    form = reactive({...vehicleForm}),
+    items = ref({}),
+    // form reset with empty value
+    resetForm = () => {
+        Object.assign(form, vehicleForm);
+    }
 
     /*get all details with laravel vue pagination*/
 
@@ -39,10 +44,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
 
     async function editCarDetails(id){
 
-      /*  if (isLoading.value) {
-            showModal.value = false;
-            return false
-        }*/
+        resetForm()
         await axios
             .get('/api/cars-detail/'+id)
             .then(response => {
@@ -117,7 +119,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                 getCarDetailsData()
                 Toast.fire({icon: 'success', title: 'Registration saved '})
                 showModal.value = false
-                form.value = []
+                resetForm()
             })
             .catch(error => {
                 if(error.response?.data){
@@ -142,12 +144,12 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
             return false
         }
         await axios
-            .put('/api/cars-detail/'+post.id, post)
+            .put('/api/cars-detail/'+form.id, post)
             .then(() => {
                 getCarDetailsData()
                 Toast.fire({icon: 'success', title: 'Registration updated '})
                 showModal.value = false
-                Object.assign(form, vehicleForm)
+                resetForm()
             })
             .catch(error => {
                 if(error.response?.data){
@@ -242,7 +244,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
                         </div>
                         <div class="flex justify-end">
                             <!-- show model in which car detail form show-->
-                            <el-button classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Register vehicle" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Register new Vehicle'; form = {}; showModal = !showModal;" />
+                            <el-button classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Register vehicle" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Register new Vehicle'; showModal = !showModal;" />
                             <!-- search input from table watchEvent trigger when any word is search-->
                             <global-search-input :classes="'rounded-full sm:w-3/5 w-2/5'" @watchEvent="watchFunc" globalType="carDetails" />
                         </div>

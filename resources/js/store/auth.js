@@ -10,7 +10,7 @@ const logInSession = ( !Cookies.get('loggedIn')),
 export const useAuth = defineStore('auth', {
     state: () => {
         return {
-            user: null, // user instance object here
+            user: {}, // user instance object here
             logoutStatus: logInSession, // logout icon show on header
             token: Cookies.get('token') || '',
             registerForm: registerObjectForm, //user register form

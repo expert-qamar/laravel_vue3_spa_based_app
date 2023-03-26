@@ -6,11 +6,14 @@ import commonCode from "../../composables/common";
 import GlobalSearchInput from "../../components/globalSearchInput.vue"
 
 const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex-e1e1 px-6 py-2 text-center text-gray-900",
-    categoryForm = { name: '' },
+    categoryForm = { id:'', name: '' },
     { router, Toast, deleteAlert, validationErrors, updateCase, headerTitle, showModal, isLoading, option} = commonCode(),
     categoriesData = ref({}),
     categoriesRow = ref({}),
-    form = reactive(categoryForm)
+    form = reactive({...categoryForm}),
+    resetForm = () => {
+        Object.assign(form, categoryForm);
+    }
 
     /*get all categories request with some parameters for perform laravel-vue pagination */
 
@@ -39,10 +42,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
     /*Show category in modal for update */
 
     async function editCategory(id){
-        if (isLoading.value) {
-            showModal.value = false;
-            return false
-        }
+        resetForm()
         if(!!id){
             await axios
                 .get('/api/categories/'+id)
@@ -95,10 +95,12 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
         await axios
             .post('/api/categories', post)
             .then(() => {
+                resetForm()
+                console.log(form.name)
                 getCategoriesData()
                 Toast.fire({icon: 'success', title: 'Category saved '})
                 showModal.value = false
-                form.value = []
+
             })
             .catch(error => {
                 if(error.response?.data){
@@ -121,12 +123,12 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
             return false
         }
         await axios
-            .put('/api/categories/'+post.id, post)
+            .put('/api/categories/'+form.id, post)
             .then(() => {
                 getCategoriesData()
                 Toast.fire({icon: 'success', title: 'Registration updated '})
                 showModal.value = false
-                Object.assign(form, categoryForm)
+                resetForm()
             })
             .catch(error => {
                 if(error.response?.data){
@@ -192,7 +194,7 @@ const tb_body_td = "whitespace-nowrap lg:whitespace-normal border-r-2 border-hex
 
                         <div class="flex justify-end">
                             <!-- show model in which category create  form show-->
-                            <el-button  classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Add Categories" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Add Categories'; form = {}; showModal = !showModal; " />
+                            <el-button  classes="whitespace-nowrap px-8 mx-2 bg-hex-aa00" button_texts="Add Categories" @clicked="validationErrors = []; updateCase = false; headerTitle = 'Add Categories'; showModal = !showModal; " />
                             <!-- search input from table watchEvent trigger when any word is search-->
                             <global-search-input :classes="'rounded-full sm:w-3/5 w-2/5'" @watchEvent="watchFunc" globalType="categories" />
                         </div>
